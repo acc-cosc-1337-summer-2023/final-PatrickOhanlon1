@@ -1,7 +1,7 @@
 //die.h
 #include <iostream>
 
-class DieList
+class Die
 {
 public:
 void roll();
