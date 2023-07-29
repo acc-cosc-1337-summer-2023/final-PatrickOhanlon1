@@ -11,7 +11,7 @@ TEST_CASE("roll")
 {
 	for (int i = 0; i < 10; i++)
 	{	
-		DieList die;
+		Die die;
         die.roll();
         bool test_roll = die.rolled_value() < 7 && die.rolled_value() > 0;
         REQUIRE(test_roll);
