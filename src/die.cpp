@@ -3,8 +3,10 @@
 
 void Die::roll()
 {
-    srand(static_cast<unsigned int>(time(0)));
-    roll_value = rand() % sides + 1;
+    std::random_device rd;
+    std::mt19937 rng = std::mt19937(rd());
+    std::uniform_int_distribution<int> distribution(1, sides);
+    roll_value = distribution(rng);
 }
 
 int Die::rolled_value() const
