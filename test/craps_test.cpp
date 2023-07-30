@@ -2,6 +2,9 @@
 #include "catch.hpp"
 #include "die.h"
 #include "roll.h"
+#include "phase.h"
+#include "come_out_phase.h"
+#include "point_phase.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -44,4 +47,14 @@ TEST_CASE("shooter roll")
         bool test_roll = roll.roll_value() < 13 && roll.roll_value() > 1;
         REQUIRE(test_roll);
     }
+}
+
+TEST_CASE("Roll outcome")
+{
+    REQUIRE(ComeOutPhase == RollOutcome::natural);
+    REQUIRE(ComeOutPhase == RollOutcome::craps);
+    REQUIRE(ComeOutPhase == RollOutcome::point);
+    REQUIRE(PointPhase == RollOutcome::point);
+    REQUIRE(PointPhase == RollOutcome::seven_out);
+    REQUIRE(PointPhase == RollOutcome::nopoint);
 }
