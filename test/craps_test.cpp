@@ -19,3 +19,16 @@ TEST_CASE("roll")
 	}
 
 }
+
+TEST_CASE("roll twice")
+{
+    for (int i = 0; i < 10; i++)
+    {
+        Die die1;
+        Die die2;
+        Roll roll(die1, die2);
+        roll.roll_die();
+        bool test_roll = roll.roll_value() < 13 && roll.roll_value() > 1;
+        REQUIRE(test_roll);
+    }
+}
