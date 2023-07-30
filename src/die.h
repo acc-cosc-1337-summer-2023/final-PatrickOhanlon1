@@ -1,4 +1,6 @@
 //die.h
+#ifndef DIE_H
+#define DIE_H
 #include <iostream>
 
 class Die
@@ -12,3 +14,5 @@ int roll_value;
 int sides{6};
 
 };
+
+#endif // DIE_H

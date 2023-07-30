@@ -3,6 +3,7 @@
 
 void Die::roll()
 {
+    srand(static_cast<unsigned int>(time(0)));
     roll_value = rand() % sides + 1;
 }
 
